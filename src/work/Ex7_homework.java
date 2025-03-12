@@ -25,7 +25,49 @@ public class Ex7_homework {
 		
 		int[][] arr = new int[size][size];
 		
-		arr[0][(size/2)+1] = 1;
+		int num = 1;  // 시작수(출력되는 숫자)
+		int y = 0;    // 행
+		int x = 0;    // 열
+		
+		x = size / 2;  // 항상 0행 가운데 열에 1 저장.
+		
+		
+		while( num <= size * size ) {  // num이 마방진 크기보다 커질 때까지 반복.
+			
+			arr[y][x] = num; // arr[0][size/2] = 1 로 시작.
+			
+			if( num % size == 0 ) { // num이 size의 배수일 때 
+				y++;                // y(행) 증가
+			}else {  // 그 외는 y(행)는 감소, x(열)은 증가
+				y--;
+				x++;
+			}
+			
+			if( y < 0 ) 
+				y = size - 1;   // 만약 y가 0보다 작아지면 size에서 1을 뺀 값만큼의 행으로 이동.
+			
+			if( x >= size )
+				x = 0;          // 만약 x가 size보다 크거나 같다면 0으로 초기화
+
+			num++;
+			
+		} // while
+		
+		// 위에서 만들어진 arr배열 출력
+		
+		for(int i = 0; i < arr.length; i++) {
+			
+			for(int j = 0; j < arr[i].length; j++) {
+				System.out.printf("%02d ", arr[i][j]);
+				
+			} // for inner
+			
+			System.out.println();
+			
+		} // for outer
+		
+		
+		
 		
 		
 				
