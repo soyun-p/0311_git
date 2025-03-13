@@ -34,7 +34,8 @@ public class Ex3_work_check {
 			
 		} // for 
 		
-		// 
+		// i가 str의 길이와 같다면 중간에 나온 적이 없으므로 전부 다 정수이고, 
+		// 같지 않다면 중간에 for문을 그만두고 나온 것이기 때문에 문자가 섞여 있는 것이다.
 		if( i != str.length() ) {
 			System.out.println("문자가 섞여 있습니다.");
 			
