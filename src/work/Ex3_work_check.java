@@ -2,7 +2,7 @@ package work;
 
 import java.util.Scanner;
 
-public class Ex3_work {
+public class Ex3_work_check {
 	public static void main(String[] args) {
 		
 		// 키보드에서 값을 입력받고, 입력받은 값이 모두 숫자로만 이루어져 있다면, "정수입니다."를, 그렇지 않다면 "문자가 섞여 있습니다." 출력
@@ -24,13 +24,17 @@ public class Ex3_work {
 			
 			char ch = str.charAt(i);
 			
-			if( ch < '0' || ch > '9' ) {
+			if( ch < '0' || ch > '9' ) { 
+			// ch => str의 각 문자들의 아스키 코드 자체. 
+		    // 따라서 문자열 중 0~9 사이의 아스키 코드에 해당되는 문자가 없는 자리가 있으면
+			// 바로 for문을 나온다.
 				break;		
 			} // if
 			
 			
 		} // for 
 		
+		// 
 		if( i != str.length() ) {
 			System.out.println("문자가 섞여 있습니다.");
 			
